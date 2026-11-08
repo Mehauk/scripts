@@ -5,7 +5,7 @@
 
   const CONFIG = {
     PROMPT_TEXT: "continue",
-    IDLE_WAIT_MS: 30 * 60 * 1000, // 30 minutes (Change to e.g. 10 * 1000 to test with 10 seconds)
+    IDLE_WAIT_MS: 15 * 60 * 1000,
     POLL_DELAY_MS: 3000,          // Check DOM every 3 seconds
     COOLDOWN_MS: 8000,            // Wait 8s after sending before resuming polling
     MAX_RUNS: 50
@@ -171,7 +171,7 @@
   window.stopAuto = cleanup;
   window.addEventListener('beforeunload', cleanup, { once: true });
 
-  console.log("%c[Auto-Continue] Started! 30-minute idle guard active.", "color: #38bdf8; font-weight: bold;");
+  console.log("%c[Auto-Continue] Started! " + (CONFIG.IDLE_WAIT_MS / 60000) + "-minute idle guard active.", "color: #38bdf8; font-weight: bold;");
   console.log("%cRun stopAuto() at any time to cancel.", "color: orange;");
   scheduleNext(1000);
 })();
