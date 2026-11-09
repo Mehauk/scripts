@@ -8,7 +8,7 @@
     IDLE_WAIT_MS: 15 * 60 * 1000,
     POLL_DELAY_MS: 3000,          // Check DOM every 3 seconds
     COOLDOWN_MS: 8000,            // Wait 8s after sending before resuming polling
-    MAX_RUNS: 50
+    MAX_RUNS: Infinity
   };
 
   let runCount = 0;
